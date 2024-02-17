@@ -1,4 +1,4 @@
-import { cx } from "@lib";
+import { cx } from "@lib/index";
 
 export default function Container(props) {
   return (

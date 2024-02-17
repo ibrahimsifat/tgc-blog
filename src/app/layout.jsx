@@ -1,8 +1,8 @@
-import { Inter } from "next/font/google";
-import config from "../config";
+import Navbar from "@components/layouts/navbar/Navbar";
+import config from "@config/index";
+import { cx } from "@lib/index";
+import { Inter, Lora } from "next/font/google";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
 
 async function sharedMetaData(params) {
   return {
@@ -45,11 +45,22 @@ async function sharedMetaData(params) {
 export async function generateMetadata({ params }) {
   return await sharedMetaData(params);
 }
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+});
 
+const lora = Lora({
+  subsets: ["latin"],
+  variable: "--font-lora",
+});
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={cx(inter.variable, lora.variable)}>
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }

@@ -23,12 +23,12 @@
     "paths": {
       "@/*": ["./*"],
       "@components/*": ["src/components/*"],
-      "@pages/*": ["src/pages/*"],
+      "@app/*": ["src/app/*"],
       "@layouts/*": ["src/layouts/*"],
       "@config/*": ["src/config/*"],
       "@styles/*": ["src/styles/*"],
-      "@utils/*": ["src/utils/*"],
-      "@assets/*": ["src/assets/*"]
+      "@lib/*": ["src/lib/*"],
+      "@assets/*": ["public/*"]
     },
     "strictNullChecks": true
   },
@@ -37,7 +37,22 @@
     "**/*.ts",
     "**/*.tsx",
     "**/*.js",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    "src/app/layout.jsx",
+    "src/components/atoms/Text/Typography.jsx",
+    "src/components/atoms/Text/Text.jsx",
+    "src/components/atoms/Headline/Headline.jsx",
+    "src/components/atoms/avatar/Avatar.jsx",
+    "src/components/atoms/Badge/Badge.jsx",
+    "src/components/atoms/Button/OptionButton.jsx",
+    "src/components/atoms/Button/LoadMoreBtn.jsx",
+    "src/components/atoms/Button/index.jsx",
+    "src/components/atoms/Button/LikeButton.jsx",
+    "src/components/atoms/Button/Button.jsx",
+    "src/components/Molecules/searchBar/SearchBar.jsx",
+    "src/components/Hero.jsx",
+    "src/components/Container.jsx",
+    "src/components/layouts/navbar/Navbar.jsx"
   ],
   "exclude": ["node_modules"]
 }
