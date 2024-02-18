@@ -1,8 +1,10 @@
-import Navbar from "@components/layouts/navbar/Navbar";
+import NavBar from "@/src/components/layouts/navbar/NavBar";
 import config from "@config/index";
 import { cx } from "@lib/index";
+import { dir } from "i18next";
 import { Inter, Lora } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
+import { languages } from "../i18n/settings";
 
 async function sharedMetaData(params) {
   return {
@@ -27,10 +29,6 @@ async function sharedMetaData(params) {
     },
     alternates: {
       canonical: "/",
-      languages: {
-        "en-US": "/en-US",
-        "ar-SA": "/ar-SA",
-      },
     },
     twitter: {
       title: config?.title || "TGC Template",
@@ -54,11 +52,17 @@ const lora = Lora({
   subsets: ["latin"],
   variable: "--font-lora",
 });
-export default function RootLayout({ children }) {
+
+// internationalization
+
+export async function generateStaticParams() {
+  return languages.map((lng) => ({ lng }));
+}
+export default function RootLayout({ children, params: { lng } }) {
   return (
-    <html lang="en">
+    <html lang={lng} dir={dir(lng)}>
       <body className={cx(inter.variable, lora.variable)}>
-        <Navbar />
+        <NavBar lng={lng} />
         {children}
       </body>
     </html>

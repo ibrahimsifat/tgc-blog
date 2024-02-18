@@ -1,20 +1,29 @@
 "use client";
-import { useState } from "react";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { BiSearchAlt } from "react-icons/bi";
-
 const SearchBar = () => {
-  const [searchInput, setSearchInput] = useState("");
+  const pathname = usePathname();
+  const { replace } = useRouter();
+  const searchParams = useSearchParams();
+  const URL = process.env.NEXT_PUBLIC_SERVER_URL;
 
   const handleSubmit = (event) => {
     event.preventDefault();
   };
   const handleInputChange = (event) => {
-    setSearchInput(event.target.value);
+    const params = new URLSearchParams(searchParams);
+    const { value } = event.target;
+    if (value) {
+      params.set("q", value);
+    } else {
+      params.delete("q");
+    }
+    replace(`${pathname}?${params.toString()}`);
   };
   return (
     <form className="relative max-w-xl mx-auto" onSubmit={handleSubmit}>
       <input
-        value={searchInput}
+        defaultValue={searchParams.get("q")?.toString()}
         onChange={handleInputChange}
         type="text"
         id="search"

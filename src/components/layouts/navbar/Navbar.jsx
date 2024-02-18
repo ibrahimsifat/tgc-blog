@@ -1,11 +1,10 @@
 import Logo from "@assets/images/logo.svg";
 import Button from "@components/atoms/Button/Button";
 import Container from "@components/atoms/Container";
-import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
-
-const Navbar = () => {
+import { languages } from "../../../app/i18n/settings";
+const Navbar = async ({ lng }) => {
   return (
     <>
       <div className="bg-white sticky top-0 z-20">
@@ -25,9 +24,31 @@ const Navbar = () => {
             </div>
             <div className=" items-center flex absolute inset-y-0 right-0 pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
               {/* Profile dropdown */}
-              <div className="hidden sm:block">
-                <Button size="md" bg="primary">
+              <div className=" sm:block">
+                {/* <Button size="md" bg="primary">
                   About Us
+                </Button>
+                <Trans i18nKey="languageSwitcher" t={t}>
+                  Switch from <strong>{{ lng }}</strong> to:{" "}
+                </Trans> */}
+                <Button size="md" bg="primary">
+                  {languages
+                    .filter((l) => lng !== l)
+                    .map((l) => {
+                      // const flag = `/./public/images/ar-SA.png`;
+                      return (
+                        <span key={l}>
+                          <Link href={`/${l}`}>{l}</Link>
+                          {/* <Image
+                            width={110}
+                            height={40}
+                            src={flag}
+                            alt="logo"
+                          /> */}
+                        </span>
+                      );
+                    })}
+                  {/* set one language  */}
                 </Button>
               </div>
             </div>
@@ -37,5 +58,5 @@ const Navbar = () => {
     </>
   );
 };
-export default dynamic(() => Promise.resolve(Navbar), { ssr: false });
-// export default Navbar;
+// export default dynamic(() => Promise.resolve(Navbar), { ssr: false });
+export default Navbar;
