@@ -1,5 +1,18 @@
 {
   "title": "Hallo English!",
   "to-second-page": "Zur dfsdf Seite",
-  "hero.title": "All Your Need Here"
+  "hero.title": "All Your Need Here",
+  "hero.description": "Search for anything you want to learn, from programming to cooking to gardening.",
+  "hero.question1": "Search for anything",
+  "hero.question2": "Get in touch with us?",
+  "hero.inputPlaceholder": "Articles you want...",
+  "filter.tag": "Filter By Tag",
+  "filter.category": "Filter By Category",
+  "pagination.prev": "Prev",
+  "pagination.next": "Next",
+  "footer.copyright": "All Rights Reserved",
+  "blogDetails.relatedCategory": "Related Blogs",
+  "blogs.notfound1": "Could not find the requested Blog.",
+  "blogs.notfound2": "Blog Not Found",
+  "blogs.notfound.back": "Go Back"
 }

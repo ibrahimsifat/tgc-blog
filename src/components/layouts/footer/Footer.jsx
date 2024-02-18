@@ -1,6 +1,9 @@
+// "use-client";
+// import { useTranslation } from "@/src/app/i18n/client";
 import Logo from "@assets/images/logo.svg";
 import Image from "next/image";
-export default function Footer() {
+export default function Footer({ lng }) {
+  // const { t } = useTranslation(lng);
   return (
     <footer class="bg-gray-50 dark:bg-gray-800 antialiased">
       <div class="p-4 py-6 mx-auto max-w-screen-xl md:p-8 lg:p-10">
@@ -16,7 +19,8 @@ export default function Footer() {
             <a href="#" class="hover:underline">
               TGC
             </a>
-            . All Rights Reserved.
+            {/* {t("footer.copyright")} */}
+            All Rights Reserved
           </span>
           <ul class="flex justify-center mt-5 space-x-5">
             <li>

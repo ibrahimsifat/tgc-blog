@@ -65,7 +65,7 @@ export default function RootLayout({ children, params: { lng } }) {
       <body className={cx(cairo.variable)}>
         <NavBar lng={lng} />
         {children}
-        <Footer />
+        <Footer lng={lng} />
       </body>
     </html>
   );

@@ -1,11 +1,17 @@
 "use client";
 import Logo from "@assets/images/logo.svg";
-import Button from "@components/atoms/Button/Button";
 import Container from "@components/atoms/Container";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { languages } from "../../../app/i18n/settings";
+
+const AR_FLAG =
+  "https://upload.wikimedia.org/wikipedia/commons/f/f8/Saudi_arabia_flag_large.png";
+
+const EN_FLAG =
+  "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Flag_of_the_United_States.png/800px-Flag_of_the_United_States.png?20110131151900";
+
 const Navbar = ({ lng }) => {
   const { query } = useRouter();
   const pathname = usePathname();
@@ -24,27 +30,27 @@ const Navbar = ({ lng }) => {
               <div className="w-full flex flex-col justify-center flex-shrink-0 relative z-30"></div>
             </div>
             <div className=" items-center flex absolute inset-y-0 right-0 pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-              <div className=" sm:block">
-                <Button size="md" bg="primary">
-                  {languages
-                    .filter((l) => lng !== l)
-                    .map((l) => {
-                      // const flag = `/./public/images/ar-SA.png`;
-                      return (
-                        <span key={l}>
-                          <Link href={`/${l}/${pathname.slice(7)}?${query}`}>
-                            {l}
-                          </Link>
-                          {/* <Image
-                            width={110}
-                            height={40}
-                            src={flag}
+              <div className="sm:block">
+                {languages
+                  .filter((l) => lng !== l)
+                  .map((l) => {
+                    const flag = `/./public/images/ar-SA.png`;
+                    return (
+                      <span key={l}>
+                        <Link
+                          href={`/${l}/${pathname.slice(7)}?${query ?? ""}`}
+                        >
+                          <Image
+                            width={40}
+                            height={15}
+                            src={l === "ar-SA" ? AR_FLAG : EN_FLAG}
+                            className="ml-2"
                             alt="logo"
-                          /> */}
-                        </span>
-                      );
-                    })}
-                </Button>
+                          />
+                        </Link>
+                      </span>
+                    );
+                  })}
               </div>
             </div>
           </div>

@@ -1,5 +1,18 @@
 {
   "title": "Hi شسيبشسيب!",
   "to-second-page": "To شيبلشسيبشسيب page",
-  "hero.title": "كل ما تحتاجه هنا"
+  "hero.title": "كل ما تحتاجه هنا",
+  "hero.description": "ابحث عن أي شيء تريد تعلمه، من البرمجة إلى الطبخ إلى البستنة.  ",
+  "hero.question1": "البحث عن مساعدة",
+  "hero.inputPlaceholder": "مقالات تريد.......",
+  "hero.question2": "ابق على تواصل معنا",
+  "filter.category": "تصفية حسب الفئة",
+  "filter.tag": "تصفية حسب العلامة",
+  "pagination.prev": "السابق",
+  "pagination.next": "التالى",
+  "footer.copyright": "كل الحقوق محفوظة",
+  "blogDetails.relatedCategory": "المدونات ذات الصلة",
+  "blogs.notfound1": "تعذر العثور على المدونة المطلوبة.",
+  "blogs.notfound2": "لم يتم العثور على المدونة",
+  "blogs.notfound.back": "ارجع"
 }

@@ -5,6 +5,7 @@ const nextConfig = {
       "source.unsplash.com",
       "avatars.githubusercontent.com",
       "flowbite.com",
+      "upload.wikimedia.org",
     ],
   },
 };

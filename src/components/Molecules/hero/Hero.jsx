@@ -17,18 +17,17 @@ const Hero = ({ lng }) => {
             </h1>
             <div className=" max-w-xl mx-auto ">
               <Text color="lime-800" size="max-w-xl">
-                Search for anything you want to learn, from programming to
-                cooking to gardening.
+                {t("hero.description")}
               </Text>
             </div>
             <div className="mt-6 mb-3">
-              <SearchBar />
+              <SearchBar t={t} />
             </div>
 
             <Text>
-              Looking for help?
+              {t("hero.question1")}
               <Link href="" className="text-primary">
-                Get in touch with us
+                {t("hero.question2")}
               </Link>
             </Text>
           </div>

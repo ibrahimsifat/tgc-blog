@@ -1,7 +1,7 @@
 "use client";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { BiSearchAlt } from "react-icons/bi";
-const SearchBar = () => {
+const SearchBar = ({ t }) => {
   // get pathname and search params
   const pathname = usePathname();
   const { replace } = useRouter();
@@ -32,7 +32,7 @@ const SearchBar = () => {
         id="search"
         name="search"
         className="pt-3 pr-40 rtl:pl-40 pb-4 pl-6 rtl:pr-6 w-full h-[50px] outline-none text-black dark:text-white rounded-full bg-white dark:bg-slate-900/60 shadow dark:shadow-gray-800 border-none focus:ring-2 focus:ring-primary focus:outline-none  duration-200"
-        placeholder="Articles you want..."
+        placeholder={t("hero.inputPlaceholder")}
       />
       <button
         type="submit"
