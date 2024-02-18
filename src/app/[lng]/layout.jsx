@@ -1,9 +1,9 @@
 import Footer from "@components/layouts/footer/Footer";
-import NavBar from "@components/layouts/navbar/NavBar";
 import config from "@config/index";
 import { cx } from "@lib/index";
 import { dir } from "i18next";
 import { Cairo, Inter } from "next/font/google";
+import NavBar from "../../components/layouts/navbar/Navbar";
 import "../globals.css";
 import { languages } from "../i18n/settings";
 

@@ -1,6 +1,6 @@
-import ProfileAvatar from "@components/molecules/profileAvatar";
 import Image from "next/image";
 import Link from "next/link";
+import ProfileAvatar from "../../Molecules/authorProfile";
 
 export default function BlogCard({ blog, lng }) {
   return (
