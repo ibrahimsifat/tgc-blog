@@ -8,6 +8,15 @@ const nextConfig = {
       "upload.wikimedia.org",
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: "/",
+        destination: "/en-AR",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;

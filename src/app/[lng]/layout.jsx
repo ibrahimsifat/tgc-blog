@@ -1,5 +1,5 @@
-import Footer from "@/src/components/layouts/footer/Footer";
-import NavBar from "@/src/components/layouts/navbar/NavBar";
+import Footer from "@components/layouts/footer/Footer";
+import NavBar from "@components/layouts/navbar/NavBar";
 import config from "@config/index";
 import { cx } from "@lib/index";
 import { dir } from "i18next";

@@ -2,7 +2,7 @@
 import Pagination from "@components/Molecules/Pagination";
 import Hero from "@components/Molecules/hero/Hero";
 import HomePageSkelton from "@components/skeleton/HomePage";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { Suspense, useEffect, useState } from "react";
 import Blog from "./blogs";
 export default function Home({ params: { lng } }) {
@@ -14,14 +14,7 @@ export default function Home({ params: { lng } }) {
   const URL = process.env.NEXT_PUBLIC_SERVER_BLOG_URL;
   const perPage = 10;
   const totalPage = Math.ceil(30 / perPage);
-  const router = useRouter();
 
-  useEffect(() => {
-    // Redirect to the default language path if the current path is '/'
-    if (router.pathname === "/") {
-      router.replace("/en-SA");
-    }
-  }, [router]);
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -29,7 +22,7 @@ export default function Home({ params: { lng } }) {
         if (lng === "ar-SA") {
           res = await fetch(
             `${URL?.replace(
-              "blogss",
+              "blogs",
               "blogs_ar"
             )}&_page=${currentPage}&_per_page=${perPage}&q=${query}`
           );
