@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-const Pagination = ({ currentPage, totalPages, baseRoute }) => {
+const Pagination = ({ currentPage, totalPages, baseRoute, lng }) => {
   const range = (start, end) =>
     Array.from({ length: end - start + 1 }, (_, i) => start + i);
 
@@ -12,7 +12,7 @@ const Pagination = ({ currentPage, totalPages, baseRoute }) => {
       <nav className="flex items-center mx-auto py-6 ">
         {prevPage && (
           <Link
-            href={`${baseRoute}?page=${prevPage}`}
+            href={`${lng}?page=${prevPage}`}
             className="h-10 w-10 font-semibold text-gray-800 hover:text-white-900  text-sm flex items-center justify-center  mx-2"
           >
             <div className="hover:text-blue-800 flex items-center">
@@ -25,7 +25,7 @@ const Pagination = ({ currentPage, totalPages, baseRoute }) => {
         {range(1, totalPages).map((page) => (
           <Link
             key={page}
-            href={`${baseRoute}?page=${page}`}
+            href={`${lng}?page=${page}`}
             className={`h-10 w-10  hover:bg-blue-600 font-semibold text-gray-800 text-sm flex items-center justify-center pagination-link hover:text-white ${
               page === currentPage ? "active bg-blue-800 text-white" : ""
             }`}
@@ -36,7 +36,7 @@ const Pagination = ({ currentPage, totalPages, baseRoute }) => {
 
         {nextPage && (
           <Link
-            href={`${baseRoute}?page=${nextPage}`}
+            href={`${lng}?page=${nextPage}`}
             className="h-10 w-10 font-semibold text-gray-800 hover:text-gray-900 text-sm flex items-center justify-center  mx-2"
           >
             <div className="hover:text-blue-800 flex items-center">

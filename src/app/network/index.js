@@ -1,4 +1,4 @@
-const URL = process.env.NEXT_PUBLIC_SERVER_URL;
+const URL = process.env.NEXT_PUBLIC_SERVER_BLOG_URL;
 export async function getBlogs({ query }) {
   const res = await fetch(`${URL}/${query}`);
 

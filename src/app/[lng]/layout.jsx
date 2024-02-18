@@ -1,8 +1,9 @@
+import Footer from "@/src/components/layouts/footer/Footer";
 import NavBar from "@/src/components/layouts/navbar/NavBar";
 import config from "@config/index";
 import { cx } from "@lib/index";
 import { dir } from "i18next";
-import { Inter, Lora } from "next/font/google";
+import { Cairo, Inter } from "next/font/google";
 import "../globals.css";
 import { languages } from "../i18n/settings";
 
@@ -48,9 +49,9 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
-const lora = Lora({
+const cairo = Cairo({
   subsets: ["latin"],
-  variable: "--font-lora",
+  variable: "--font-cairo",
 });
 
 // internationalization
@@ -61,9 +62,10 @@ export async function generateStaticParams() {
 export default function RootLayout({ children, params: { lng } }) {
   return (
     <html lang={lng} dir={dir(lng)}>
-      <body className={cx(inter.variable, lora.variable)}>
+      <body className={cx(cairo.variable)}>
         <NavBar lng={lng} />
         {children}
+        <Footer />
       </body>
     </html>
   );
