@@ -6,6 +6,7 @@ const nextConfig = {
       "avatars.githubusercontent.com",
       "flowbite.com",
       "upload.wikimedia.org",
+      "i.ibb.co",
     ],
   },
   async redirects() {
