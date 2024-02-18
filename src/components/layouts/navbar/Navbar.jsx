@@ -34,7 +34,6 @@ const Navbar = ({ lng }) => {
                 {languages
                   .filter((l) => lng !== l)
                   .map((l) => {
-                    const flag = `/./public/images/ar-SA.png`;
                     return (
                       <span key={l}>
                         <Link
